@@ -163,6 +163,9 @@ void isvestiAtaskaita(ostream& isvestis,
     double visoPriesNuolaidas = 0.0;
     isvestis << fixed << setprecision(2);
 
+    isvestis << "Kategorija | Pavadinimas | Kaina (Eur) | Kiekis | "
+         << "Pries nuolaida (Eur) | Nuolaida (Eur) | Moketi (Eur)\n";
+
     for (int i = 0; i < prekiuKiekis; i++) {
         string kategorija = kategorijos[i];
         string pavadinimas = pavadinimai[i];
@@ -176,10 +179,8 @@ void isvestiAtaskaita(ostream& isvestis,
         visoMoketi = visoMoketi + moketinaSuma;
 
         isvestis << kategorija << " | " << pavadinimas << " | "
-     << kaina << " | " << kiekis << '\n';
-        isvestis << "Suma pries nuolaida: " << eilutesSuma << '\n';
-        isvestis<< "Nuolaida: " << nuolaida << " Eur\n";
-        isvestis << "Moketina suma: " << moketinaSuma << " Eur\n";
+         << kaina << " | " << kiekis << " | " << eilutesSuma
+         << " | " << nuolaida << " | " << moketinaSuma << '\n';
     }
 
     isvestis << ""<< '\n';
